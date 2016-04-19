@@ -51,7 +51,7 @@ var render = function () {
   ctx.strokeStyle = "#d2e3ed";
   ctx.strokeRect(0,0,canvas.width,canvas.height);
 
- 
+
   ctx.fillStyle = "#ffa500";
   // P1
   ctx.fillRect(p1.x, p1.y, p1.width, p1.height);
@@ -71,7 +71,7 @@ var pattern2 = ctx.createPattern(img2,"repeat");
   ctx.fill();
   ctx.closePath();
 
-     
+
 
 // Text options
   ctx.fillStyle = "#aeccde";
@@ -142,12 +142,6 @@ if  (13 in keysDown){
 }
 
 
-// if(isGameStarted){
-//  //Ball movement
-//  ball.x +=ball.speedX * modifier;
-//  ball.y +=ball.speedY * modifier;
-// }
-
 
  if (87 in keysDown) { // P1 holding up (key: w)
     p1.y -= p1.speed * modifier;
@@ -157,7 +151,7 @@ if  (13 in keysDown){
     }
   }
 
-  
+
  if (83 in keysDown){
   p1.y += p1.speed * modifier;
   console.log("p1 s key is working");
@@ -165,7 +159,7 @@ if  (13 in keysDown){
   if(p1.y>= boundary){
     p1.y = boundary;
   }
-} 
+}
 
  if (38 in keysDown) { // P1 holding up (key: w)
     p2.y -= p2.speed * modifier;
@@ -182,11 +176,11 @@ if  (13 in keysDown){
   if(p2.y>= boundary){
     p2.y = boundary;
   }
-} 
+}
 
 
-// ball collide left  
- if(ball.x - ball.r<=0){
+// ball collide left
+ if(ball.x-ball.r<=0){
   p2.score++;
   alert("P2 wins!")
   reset();
@@ -196,7 +190,7 @@ if  (13 in keysDown){
 if(
   ball.x >= canvas.width - ball.r){
   p1.score++;
-   
+
     alert("P1 wins!")
   reset();
 }
@@ -206,7 +200,7 @@ if (ball.y-ball.r <=0){
   ball.vY = Math.abs(ball.vY) ;
   bounce.load();
   bounce.play();
-  
+
 }
 
 //ball colliding with bottom boundary
@@ -215,7 +209,7 @@ if (ball.y >= (canvas.height - ball.r) ){
   ball.vY = Math.abs(ball.vY) * -1 ;
   bounce.load();
   bounce.play();
-  
+
 }
 
 
@@ -224,12 +218,12 @@ if((ball.x-ball.r)<=(p1.x+p1.width)
   && p1.x <=(ball.x + ball.r)
   && ball.y <= (p1.y + p1.height)
   && p1.y <= (ball.y + ball.r)
-){  
+){
   audio1.load();
   audio1.play();
   ball.vX = Math.abs(ball.vX);
   ball.vY=randomize();
-    
+
 }
 
 //ball colliding with p2
@@ -237,13 +231,13 @@ if(ball.x <= (p2.x + p2.width)
    && p2.x <= (ball.x + ball.r )
    && ball.y <=(p2.y + p2.height)
    && p2.y <= (ball.y + ball.r)
-  ){  
+  ){
     audio2.load();
     audio2.play();
   ball.vX = Math.abs(ball.vX)* -1;
      ball.vY=randomize();
-   
- 
+
+
    }
 
 
@@ -273,6 +267,7 @@ function randomize(){
 
 
 function mainLoop(){
+
   var now = new Date().getTime();
   dt = now - then;
   update(dt/1000);
@@ -280,9 +275,11 @@ function mainLoop(){
   then=now; //*to loop back latest time
   requestAnimationFrame(mainLoop);
 
+
+
 }
 
-requestAnimationFrame(mainLoop);
+
 
 // To start the game
 var isGameStarted = false;
@@ -290,10 +287,3 @@ var then = Date.now();
 
 reset();
 mainLoop();
-
-
-
-
-
-
-
