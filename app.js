@@ -106,6 +106,10 @@ var pattern2 = ctx.createPattern(img2,"repeat");
 
   isGameStarted = false;
 
+  p1.y = (canvas.height - 150) / 2;
+
+  p2.y = (canvas.height - 0 - 150) / 2,
+
 
   ball.x = (canvas.width - ball.r) / 2;
   ball.y = (canvas.height - ball.r) / 2;
