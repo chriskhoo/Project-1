@@ -8,7 +8,7 @@ document.body.appendChild(canvas);
 
 
 var background = new Image();
-background.src = "image/bamboo.jpg";
+background.src = "image/background.gif";
 
 var img2 = new Image();
 
@@ -46,7 +46,7 @@ var render = function () {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 
-  ctx.drawImage(background,0,0);
+  ctx.drawImage(background,0,0,768,432);
   ctx.lineWidth= 2;
   ctx.strokeStyle = "#d2e3ed";
   ctx.strokeRect(0,0,canvas.width,canvas.height);
@@ -82,10 +82,10 @@ var pattern2 = ctx.createPattern(img2,"repeat");
   //P1 label
 
   // P1 Score
-  ctx.fillText("P1: "+p1.score, 32, 32);
+  // ctx.fillText("P1: "+p1.score, 32, 32);
 
   // P2 Score
-  ctx.fillText("P2: "+p2.score, canvas.width - 32 - 40, 32);
+  // ctx.fillText("P2: "+p2.score, canvas.width - 32 - 40, 32);
 
   // Text options
   ctx.font = "25px Helvetica";
@@ -104,11 +104,11 @@ var pattern2 = ctx.createPattern(img2,"repeat");
 
  var reset = function () {
 
+
   isGameStarted = false;
 
-  p1.y = (canvas.height - 150) / 2;
 
-  p2.y = (canvas.height - 0 - 150) / 2,
+
 
 
   ball.x = (canvas.width - ball.r) / 2;
@@ -119,6 +119,9 @@ var pattern2 = ctx.createPattern(img2,"repeat");
   ball.vX = Math.random() > 0.5 ? 500 : -500;
 
   ball.vY = Math.random() > 0.5 ? 500 : -500;
+
+
+
 }
 
 
@@ -136,6 +139,8 @@ addEventListener("keyup",function(e){
 
 
 var update = function(modifier){
+
+
 
 // var audio = new Audio("sound/jab.mp3");
 var audio1 = document.getElementById('grunt1');
@@ -187,7 +192,12 @@ if  (13 in keysDown){
  if(ball.x-ball.r<=0){
   p2.score++;
   alert("P2 wins!")
+
   reset();
+
+
+
+    location.reload();
  }
 
 //ball collide right
@@ -196,7 +206,11 @@ if(
   p1.score++;
 
     alert("P1 wins!")
+
   reset();
+
+
+    location.reload();
 }
 
 //ball colliding with top boundary
