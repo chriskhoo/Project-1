@@ -88,7 +88,7 @@ var pattern2 = ctx.createPattern(img2,"repeat");
   // ctx.fillText("P2: "+p2.score, canvas.width - 32 - 40, 32);
 
   // Text options
-  ctx.font = "25px Helvetica";
+  ctx.font = "20px Helvetica Nueue";
 
 
 
