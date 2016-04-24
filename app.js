@@ -74,8 +74,8 @@ var pattern2 = ctx.createPattern(img2,"repeat");
 
 
 // Text options
-  ctx.fillStyle = "#aeccde";
-  ctx.font = "18px Helvetica";
+  ctx.fillStyle = "white";
+  ctx.font = "12px Helvetica";
   ctx.textAlign = "left";
   ctx.textBaseline = "top";
 

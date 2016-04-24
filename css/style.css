@@ -18,5 +18,9 @@ canvas{
 }
 
 body{
-	background-color: #42160e;
+	background-color: white;
+}
+
+#heading{
+	padding-bottom: 50px;
 }
